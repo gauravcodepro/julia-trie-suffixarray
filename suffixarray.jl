@@ -7,7 +7,7 @@
 # will generate the suffix arrays for all of them and you can fetch the suffix arrays.
 # implementing a rust crate to implement the trie graphs which will take this as input.
 # sort the pangenomes mapping reads as suffix arrays.
-
+# will integrate the BLAS and LAPACK but with RUST as havent coded in C++ since last 2 years. 
 function generatesuffixarray(readsfiles)
     if !readfiles
         error("readfiles are needed for the suffixarray")
@@ -27,7 +27,7 @@ function generatesuffixarray(readsfiles)
          # indexing the first slot of the variable for the suffix array rather than making slices
          # instead of sorting a later has, imimplemented a position hash so that where it is generating
          # it is storing the indices hash.
-         # in the another implementation i am puting the prefix and the suffix merge using $
+         # another implementation i am puting the prefix and the suffix merge using $
         for i in 1:length(sequence)-1
             if i == 1
                 suffixarraystore[header] = [i, string(sequence[1])]
