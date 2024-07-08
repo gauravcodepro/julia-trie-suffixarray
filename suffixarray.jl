@@ -64,7 +64,7 @@ function prepapreCUDA(readfiles)
         prepareGPUSequences =  Any[]
         for i in 1:length(sequence)
             # instead of separate for loops, i implemented a RUST based iteration so that it can be containerized.
-            push!(prepareGPUSequences, string(join(map(x -> x == 'C' ? 67 : x, collect(join(map(x -> x == 'G' ? 71 : x, collect(join(map(x -> x == 'T' ? 84 : x, collect(join(map(x -> x == 'A' ? 65 : x, collect(d[1]))))))))))))))
+            push!(prepareGPUSequences, string(join(map(x -> x == 'C' ? 67 : x, collect(join(map(x -> x == 'G' ? 71 : x, collect(join(map(x -> x == 'T' ? 84 : x, collect(join(map(x -> x == 'A' ? 65 : x, collect(sequence[i]))))))))))))))
         end
         suffixarraystoreCUDA = Dict(String, Union{Int32, String})()
         for i in 1:length(prepareGPUSequences)-1
