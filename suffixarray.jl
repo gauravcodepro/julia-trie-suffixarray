@@ -44,9 +44,9 @@ function generatesuffixarray(readsfiles)
 end
 
 
-# started coding the GPu prepapre function, storing the reads as bits with in the load memory.
+# started coding the GPU/CUDA prepapre function, storing the reads as bits with in the load memory.
 # malloc()
-function prepapreGPU(readfiles)
+function prepapreCUDA(readfiles)
      # making the reads string as Unicode for the GPU to process them as
      # StoredArrays for the CUDA loads. bit type compilation
     header = Any[]
