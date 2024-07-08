@@ -33,7 +33,7 @@ function generatesuffixarray(readsfiles)
                 suffixarraystore[header] = [i, string(sequence[1])]
             end
             if i != 1
-                suffixarraystore[header] = [i, sequence[i=length(sequence)]]
+                suffixarraystore[header] = [i, sequence[i:length(sequence)]]
             end
         end
         lastbitlengthstore = Dict(Int,Union{Int32,String)()
