@@ -1,4 +1,4 @@
-# trie-suffixarray
+# julia-trie-suffixarray
 
 - implementing the tri suffix array on a node sorted arays for the faster sequence bit search
 
