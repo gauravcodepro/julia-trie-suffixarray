@@ -44,8 +44,8 @@ function generatesuffixarray(readsfiles)
 end
 
 
-# started coding the GPU/CUDA prepapre function, storing the reads as bits with in the load memory.
-# malloc()
+# CUDA storing the reads as bits for loading as sortedArrays with in the memory.
+# integrating the
 function prepapreCUDA(readfiles)
      # making the reads string as Unicode for the GPU to process them as
      # StoredArrays for the CUDA loads. bit type compilation
@@ -61,9 +61,27 @@ function prepapreCUDA(readfiles)
         end
         sequencefinal = map(uppercase,sequence)
         prepareGPUheaders = header
-        prepareGPUSequences =
-
+        prepareGPUSequences =  Any[]
+        for i in 1:length(sequence)
+            # instead of separate for loops, i implemented a RUST based iteration so that it can be containerized.
+            push!(prepareGPUSequences, string(join(map(x -> x == 'C' ? 67 : x, collect(join(map(x -> x == 'G' ? 71 : x, collect(join(map(x -> x == 'T' ? 84 : x, collect(join(map(x -> x == 'A' ? 65 : x, collect(d[1]))))))))))))))
+        end
+        suffixarraystoreCUDA = Dict(String, Union{Int32, String})()
+        for i in 1:length(prepareGPUSequences)-1
+            if i == 1
+                suffixarraystore[header] = [i, string(prepareGPUSequences[1])]
+            end
+            if i != 1
+                suffixarraystore[header] = [i, sequence[i:length(prepareGPUSequences)]]
+            end
+        end
+        lastbitlengthstore = Dict(Int,Union{Int32,String)()
+        for i in 1:length(sequence)
+            lastbitlengthstore["header"] = [length(seq), seq[length(prepareGPUSequences)]]
+        end
     end
+end
+
 
 
 
