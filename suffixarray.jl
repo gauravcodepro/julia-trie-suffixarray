@@ -2,7 +2,6 @@
 # Author Gaurav
 # Universitat Potsdam
 # Date 2024-7-8
-
 # implementation of suffix arrays for the PacbioHifi reads and sorting them in trie graphs.
 # will generate the suffix arrays for all of them and you can fetch the suffix arrays.
 # implementing a rust crate to implement the trie graphs which will take this as input.
@@ -44,11 +43,10 @@ function generatesuffixarray(readsfiles)
 end
 
 
-# CUDA storing the reads as bits for loading as sortedArrays with in the memory.
-# integrating the
 function prepapreCUDA(readfiles)
-     # making the reads string as Unicode for the GPU to process them as
-     # StoredArrays for the CUDA loads. bit type compilation
+# CUDA storing the reads as bits for loading as sortedArrays with in the memory.
+# integrating the making the reads string as Unicode for the GPU to process them as
+# StoredArrays for the CUDA loads. bit type compilation
     header = Any[]
     sequence = Any[]
     if readsfiles
@@ -81,12 +79,5 @@ function prepapreCUDA(readfiles)
         end
     end
 end
-
-
-
-
-
-
-
 
 
