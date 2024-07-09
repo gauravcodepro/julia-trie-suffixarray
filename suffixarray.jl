@@ -1,6 +1,5 @@
 #! /usr/bin/env julia
 # Author Gaurav
-# Universitat Potsdam
 # Date 2024-7-8
 # implementation of suffix arrays for the PacbioHifi reads and sorting them in trie graphs.
 # will generate the suffix arrays for all of them and you can fetch the suffix arrays.
